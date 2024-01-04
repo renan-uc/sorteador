@@ -1,10 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Sorteador</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Sorteador</h1>
+    <header>
+        <h1><i class="fa-solid fa-clover"></i> Sorteador</h1>
+    </header>
+
+    <main class="selecao-de-jogos">
+        <section class="jogos">
+            <h1>Selecione um Jogo</h1>
+
+            <ul class="lista-de-jogos">
+                <li class="jogo selecionado" id="lotofacil">
+                    <a><img src="{% static 'images/lotofacil.png' %}" alt="Lotofacil"></a>
+                </li>
+
+                <li class="jogo" id="megasena">
+                    <a><img src="{% static 'images/megasena.png' %}" alt="Mega-Sena"></a>
+                </li>
+
+                <li class="jogo" id="quina">
+                    <a><img src="{% static 'images/quina.png' %}" alt="Quina"></a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+
+    <script src="https://kit.fontawesome.com/abceda3d36.js" crossorigin="anonymous"></script>
 </body>
 </html>
