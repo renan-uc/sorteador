@@ -17,7 +17,29 @@ header h1 {
     color: #fff;
 }
 
+.selecao-de-jogos {
+    display: flex;
+    padding: 50px;
+}
 
+.jogos h1 {
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
 
+.jogos ul {
+    display: flex;
+    list-style: none;
+}
 
+.jogos li {
+    display: inline-block;
+}
+
+.lista-de-jogos .jogo img {
+    width: 70%;
+}
+.lista-de-jogos a{
+    text-decoration: none;
+}
 
