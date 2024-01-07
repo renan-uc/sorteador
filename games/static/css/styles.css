@@ -36,6 +36,11 @@ header h1 {
     display: inline-block;
 }
 
+.lista-de-jogos {
+    margin-left: 15%;
+    margin-right: 10%;
+}
+
 .lista-de-jogos .jogo img {
     width: 70%;
 }

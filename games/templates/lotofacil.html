@@ -15,6 +15,13 @@
         <h1><i class="fa-solid fa-clover"></i> Sorteador</h1>
     </header>
 
+    <form action="." method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="SORTEAR">
+    </form>
+
+
     <script src="https://kit.fontawesome.com/abceda3d36.js" crossorigin="anonymous"></script>
 </body>
 </html>
