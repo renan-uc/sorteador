@@ -23,7 +23,12 @@
 
     <ul class="bilhete">
         {% for jogo in bilhete %}
-            <li>{{ jogo }}</li>
+            <div class="jogo">
+            {% for numero in jogo %}
+                <li class="numero">{{ numero }}</li>
+            {% endfor %}
+            </div>
+            <p>-------</p>
         {% endfor %}
     </ul>
 

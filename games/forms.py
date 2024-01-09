@@ -6,4 +6,4 @@ class LotofacilForm(forms.ModelForm):
         model = Lotofacil
         fields = ('qntJogos', 'qntNumerosPorJogo')
 
-        
+      
