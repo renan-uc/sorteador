@@ -1,8 +1,8 @@
 import random
 from django.shortcuts import render
 from django.http import HttpResponse
-from games.forms import LotofacilForm, MegaSenaForm
-from games.models import Lotofacil, MegaSena
+from games.forms import LotofacilForm, MegaSenaForm, QuinaForm
+from games.models import Lotofacil, MegaSena, Quina
 
 def sorteador(qntJogos, qntNumerosPorJogo, numDisponiveis):
     bilhete = []
@@ -62,4 +62,18 @@ def megasena(request):
             return render(request, 'megasena.html', {'form':form})
 
 def quina(request):
-    return render(request, 'quina.html')
+    if request.method == "GET":
+        form = QuinaForm()
+        return render(request, 'quina.html', {'form':form})
+
+    elif request.method == "POST":
+        form = QuinaForm(request.POST)
+        if form.is_valid():
+            quina = form.save(commit=False) 
+            jogos = quina.qntJogos
+            num = quina.qntNumerosPorJogo
+            bilhete = sorteador(jogos, num, 80)
+            quina.save()
+            return render(request, 'quina.html', {'form':form, 'bilhete':bilhete})
+        else:
+            return render(request, 'quina.html', {'form':form})
