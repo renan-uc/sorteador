@@ -15,6 +15,23 @@
         <h1><i class="fa-solid fa-clover"></i> Sorteador</h1>
     </header>
 
+    <form method="post" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">SORTEAR</button>
+    </form>
+
+    <ul class="bilhete">
+        {% for jogo in bilhete %}
+            <div class="jogo">
+            {% for numero in jogo %}
+                <li class="numero">{{ numero }}</li>
+            {% endfor %}
+            </div>
+            <p>-------</p>
+        {% endfor %}
+    </ul>
+
     <script src="https://kit.fontawesome.com/abceda3d36.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,18 +1,18 @@
 import random
 from django.shortcuts import render
 from django.http import HttpResponse
-from games.forms import LotofacilForm
-from games.models import Lotofacil
+from games.forms import LotofacilForm, MegaSenaForm
+from games.models import Lotofacil, MegaSena
 
-def sorteador(qntJogos, qntNumerosPorJogo):
+def sorteador(qntJogos, qntNumerosPorJogo, numDisponiveis):
     bilhete = []
     jogo = []
 
     for _ in range(qntJogos):
         for _ in range(qntNumerosPorJogo):
-            n = random.randint(1, 25)
+            n = random.randint(1, numDisponiveis)
             while( n in jogo): # verifica se o número já está no jogo
-                n = random.randint(1, 25)
+                n = random.randint(1, numDisponiveis)
             jogo.append(n)
         if jogo in bilhete: # verifica se o jogo já está no bilhete
             qntJogos-=1
@@ -38,14 +38,28 @@ def lotofacil(request):
             lotofacil = form.save(commit=False) 
             jogos = lotofacil.qntJogos
             num = lotofacil.qntNumerosPorJogo
-            bilhete = sorteador(jogos, num)
+            bilhete = sorteador(jogos, num, 25)
             lotofacil.save()
             return render(request, 'lotofacil.html', {'form':form, 'bilhete':bilhete})
         else:
             return render(request, 'lotofacil.html', {'form':form})
             
 def megasena(request):
-    return render(request, 'megasena.html')
+    if request.method == "GET":
+        form = MegaSenaForm()
+        return render(request, 'megasena.html', {'form':form})
+
+    elif request.method == "POST":
+        form = MegaSenaForm(request.POST)
+        if form.is_valid():
+            megasena = form.save(commit=False) 
+            jogos = megasena.qntJogos
+            num = megasena.qntNumerosPorJogo
+            bilhete = sorteador(jogos, num, 60)
+            megasena.save()
+            return render(request, 'megasena.html', {'form':form, 'bilhete':bilhete})
+        else:
+            return render(request, 'megasena.html', {'form':form})
 
 def quina(request):
     return render(request, 'quina.html')
