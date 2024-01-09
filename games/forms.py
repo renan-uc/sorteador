@@ -4,4 +4,6 @@ from games.models import Lotofacil
 class LotofacilForm(forms.ModelForm):
     class Meta:
         model = Lotofacil
-        fields = "__all__"
+        fields = ('qntJogos', 'qntNumerosPorJogo')
+
+        
