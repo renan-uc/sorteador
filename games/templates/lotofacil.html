@@ -11,11 +11,17 @@
 </head>
 
 <body>
-    <header>
-        <h1><a href="sorteio"><i class="fa-solid fa-clover"></i></a> Sorteador</h1>
+    <header class="cabecalho">
+        <a href='sorteio'><h1><i class="fa-solid fa-clover"></i> Sorteador</h1></a>
     </header>
 
-    <form method="post" >
+    <section class="info">
+        <img src="{% static 'images/lotofacil.png' %}" alt="Lotofacil">
+        <p>A Lotofácil é uma modalidade de loteria brasileira onde os participantes escolhem de 15  a 20 números de um total de 25 disponíveis. Para ganhar o prêmio principal, é necessário acertar os 15 números sorteados. Além do prêmio principal, há também premiações para quem acerta 14, 13, 12 e 11 números.</p>
+    </section>
+
+    <form class="formulario" method="post" >
+        <p>Preencha os campos abaixo para montar o seu bilhete</p>
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">SORTEAR</button>
@@ -23,12 +29,11 @@
 
     <ul class="bilhete">
         {% for jogo in bilhete %}
-            <div class="jogo">
+            <div class="jogo-bilhete">
             {% for numero in jogo %}
                 <li class="numero">{{ numero }}</li>
             {% endfor %}
             </div>
-            <p>-------</p>
         {% endfor %}
     </ul>
 

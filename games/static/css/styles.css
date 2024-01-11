@@ -48,3 +48,83 @@ header h1 {
     text-decoration: none;
 }
 
+.cabecalho a {
+    text-decoration: none;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px; /* Defina a largura desejada para o seu formulário */
+    margin: 0 auto; /* Define as margens automáticas para centralizar horizontalmente */
+    border: 1px solid #ccc; /* Adicione uma borda para visualização */
+    padding: 20px; /* Adicione preenchimento interno para melhor aparência */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adicione uma sombra para destacar o formulário */
+    margin-bottom: 20px;
+}
+
+.formulario p {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.formulario button {
+    margin-top: 10px;
+    background-color: #930089;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    max-width: 800px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px; /* Adiciona algum espaçamento interno */
+}
+
+.info img {
+    width: 100px; /* Ajuste a largura da imagem conforme necessário */
+    margin-right: 20px; /* Adiciona um espaçamento à direita da imagem */
+}
+
+.info p {
+    flex: 1; /* Faz com que o parágrafo ocupe o restante do espaço disponível */
+    text-align: justify;
+}
+
+.bilhete {
+    list-style-type: none;
+    padding: 0;
+}
+
+.jogo-bilhete {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.numero {
+    display: inline-block;
+    padding: 5px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+/* Adiciona uma linha horizontal entre os jogos */
+.jogo-bilhete:not(:last-child) {
+    border-bottom: 1px solid #333;
+}
+
+
