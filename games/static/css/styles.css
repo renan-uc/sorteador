@@ -57,11 +57,11 @@ header h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 500px; /* Defina a largura desejada para o seu formulário */
-    margin: 0 auto; /* Define as margens automáticas para centralizar horizontalmente */
-    border: 1px solid #ccc; /* Adicione uma borda para visualização */
-    padding: 20px; /* Adicione preenchimento interno para melhor aparência */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adicione uma sombra para destacar o formulário */
+    width: 500px; 
+    margin: 0 auto; 
+    border: 1px solid #ccc; 
+    padding: 20px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     margin-bottom: 20px;
 }
 
@@ -72,7 +72,6 @@ header h1 {
 
 .formulario button {
     margin-top: 10px;
-    background-color: #930089;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -80,21 +79,33 @@ header h1 {
     cursor: pointer;
 }
 
+#botao-lotofacil {
+    background-color: #930089;
+}
+
+#botao-megasena {
+    background-color: #209869;
+}
+
+#botao-quina {
+    background-color: #260085;
+}
+
 .info {
     display: flex;
     align-items: center;
-    max-width: 800px; /* Largura máxima do conteúdo */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    padding: 20px; /* Adiciona algum espaçamento interno */
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 20px; 
 }
 
 .info img {
-    width: 100px; /* Ajuste a largura da imagem conforme necessário */
-    margin-right: 20px; /* Adiciona um espaçamento à direita da imagem */
+    width: 100px; 
+    margin-right: 20px; 
 }
 
 .info p {
-    flex: 1; /* Faz com que o parágrafo ocupe o restante do espaço disponível */
+    flex: 1; 
     text-align: justify;
 }
 
@@ -107,24 +118,45 @@ header h1 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    border: 2px solid #333;
     border-radius: 10px;
     padding: 10px;
     margin-left: 5px;
     margin-right: 5px;
 }
 
+#jogo-bilhete-lotofacil {
+    border: 2px solid #c87fc3;
+}
+
+#jogo-bilhete-megasena{
+    border: 2px solid #8fcbb3;
+}
+
+#jogo-bilhete-quina {
+    border: 2px solid #927fc1;
+}
+
 .numero {
     display: inline-block;
     padding: 5px;
-    border: 2px solid #333;
     border-radius: 5px;
     margin-right: 5px;
+    color: #fff;
 }
 
-/* Adiciona uma linha horizontal entre os jogos */
-.jogo-bilhete:not(:last-child) {
-    border-bottom: 1px solid #333;
+#numero-lotofacil {
+    border: 2px solid #930089;
+    background-color: #930089;
+}
+
+#numero-megasena {
+    border: 2px solid #209869;
+    background-color: #209869;
+}
+
+#numero-quina {
+    border: 2px solid #260085;
+    background-color: #260085;
 }
 
 

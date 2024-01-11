@@ -24,14 +24,14 @@
         <p>Preencha os campos abaixo para montar o seu bilhete</p>
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">SORTEAR</button>
+        <button id="botao-lotofacil" type="submit">SORTEAR</button>
     </form>
 
     <ul class="bilhete">
         {% for jogo in bilhete %}
-            <div class="jogo-bilhete">
+            <div class="jogo-bilhete" id="jogo-bilhete-lotofacil">
             {% for numero in jogo %}
-                <li class="numero">{{ numero }}</li>
+                <li class="numero" id="numero-lotofacil">{{ numero }}</li>
             {% endfor %}
             </div>
         {% endfor %}

@@ -15,20 +15,25 @@
         <a href='sorteio'><h1><i class="fa-solid fa-clover"></i> Sorteador</h1></a>
     </header>
 
+    <section class="info">
+        <img src="{% static 'images/megasena.png' %}" alt="Mega-Sena">
+        <p>A Mega-Sena é uma modalidade de loteria brasileira na qual os participantes escolhem de seis a vinte números de um total de 60 disponíveis, e para ganhar o prêmio principal, é necessário acertar os seis números sorteados. Além do prêmio principal, a Mega-Sena também oferece premiações para quem acerta cinco e quatro dos números sorteados.</p>
+    </section>
+
     <form class="formulario" method="post" >
+        <p>Preencha os campos abaixo para montar o seu bilhete</p>
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">SORTEAR</button>
+        <button id="botao-megasena" type="submit">SORTEAR</button>
     </form>
 
     <ul class="bilhete">
         {% for jogo in bilhete %}
-            <div class="jogo">
+            <div class="jogo-bilhete" id="jogo-bilhete-megasena">
             {% for numero in jogo %}
-                <li class="numero">{{ numero }}</li>
+                <li class="numero" id="numero-megasena">{{ numero }}</li>
             {% endfor %}
             </div>
-            <p>-------</p>
         {% endfor %}
     </ul>
 

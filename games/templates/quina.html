@@ -15,20 +15,25 @@
         <a href='sorteio'><h1><i class="fa-solid fa-clover"></i> Sorteador</h1></a>
     </header>
 
+    <section class="info">
+        <img src="{% static 'images/quina.png' %}" alt="Quina">
+        <p>A Quina é uma modalidade de loteria brasileira onde os participantes escolhem de cinco a quinze números de um total de 80 disponíveis.  Para ganhar o prêmio principal, é necessário acertar os cinco números sorteados. Além do prêmio principal, a Quina oferece premiações para quem acerta quatro, três e dois números.</p>
+    </section>
+
     <form class="formulario" method="post" >
+        <p>Preencha os campos abaixo para montar o seu bilhete</p>
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">SORTEAR</button>
+        <button type="submit" id="botao-quina">SORTEAR</button>
     </form>
 
     <ul class="bilhete">
         {% for jogo in bilhete %}
-            <div class="jogo">
+            <div class="jogo-bilhete" id="jogo-bilhete-quina">
             {% for numero in jogo %}
-                <li class="numero">{{ numero }}</li>
+                <li class="numero" id="numero-quina">{{ numero }}</li>
             {% endfor %}
             </div>
-            <p>-------</p>
         {% endfor %}
     </ul>
 
