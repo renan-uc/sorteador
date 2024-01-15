@@ -8,14 +8,14 @@ def sorteador(qntJogos, qntNumerosPorJogo, numDisponiveis):
     bilhete = []
     jogo = []
 
-    for _ in range(qntJogos):
+    for controle in range(qntJogos):
         for _ in range(qntNumerosPorJogo):
             n = random.randint(1, numDisponiveis)
             while( n in jogo): # verifica se o número já está no jogo
                 n = random.randint(1, numDisponiveis)
             jogo.append(n)
         if jogo in bilhete: # verifica se o jogo já está no bilhete
-            qntJogos-=1
+            controle-=1
         else:
             jogo.sort()
             bilhete.append(jogo)
