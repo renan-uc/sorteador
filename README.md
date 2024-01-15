@@ -18,7 +18,7 @@ Caso o usuário entre com valores não aceitos para o determinado jogo, ele ser�
 
 ![imagem3](./imagens_README/3.PNG)
 
-Após preencher os campos de maneira correta e, em seguida, clicar em 'SORTEAR', é retornado o bilhete com jogos aletórios e não repetidos com a quantida de números informada anteriormente.
+Após preencher os campos de maneira correta e, em seguida, clicar em 'SORTEAR', é retornado o bilhete com jogos aletórios e não repetidos com a quantidade de números informada anteriormente.
 
 ![imagem4](./imagens_README/4.PNG)
 
