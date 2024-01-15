@@ -2,7 +2,7 @@
 
 O projeto tem como objetivo gerar bilhetes aleatórios para os três principais jogos da loteria brasileira (Lotofácil, Mega-Sena e Quina).
 
-![imagem1](./imagens_README/1.PNG)
+![imagem1](./imagens_README/1.png)
 
 Para a construção da aplicação Web foram utilizadas as seguintes tecnologias:
 - Python
